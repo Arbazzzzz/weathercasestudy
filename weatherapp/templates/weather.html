@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast - {{ weather.city }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="weather-container">
+        <div class="container">
+            <h1>Weather Forecast for {{ weather.city }}</h1>
+            <div class="weather-info">
+                <h2>{{ weather.temperature }}°C</h2>
+                <img src="http://openweathermap.org/img/wn/{{ weather.icon }}@2x.png" alt="weather icon">
+                <p>{{ weather.description }}</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
