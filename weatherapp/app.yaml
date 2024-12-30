@@ -1,4 +1,4 @@
-runtime: python 3.12.3
+runtime: python312
 
 env_variables:
   API_KEY: "bd5e378503939ddaee76f12ad7a97608"  # Ensure you replace this with your valid API key or use Secret Manager for sensitive data
