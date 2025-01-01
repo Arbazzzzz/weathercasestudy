@@ -5,7 +5,7 @@ import requests
 
 app = Flask(__name__)
 
-API_KEY = "bd5e378503939ddaee76f12ad7a97608"  # Replace with your valid API key
+API_KEY = "bd5e378503939ddaee76f12ad7a97608"  
 
 @app.route('/')
 def home():
@@ -17,14 +17,12 @@ def weather():
     if not city:
         return render_template('home.html', error="Please enter a city name.")
     
-    # Construct the URL for the weather API request
     url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=metric"
     response = requests.get(url)
     
     if response.status_code == 200:
         data = response.json()
         
-        # Check if the 'name' key exists in the response
         if 'name' in data:
             weather_data = {
                 'city': data['name'],  # The city name from the response
